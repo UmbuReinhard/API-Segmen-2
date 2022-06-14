@@ -59,6 +59,11 @@ namespace API.Repository.Data
                                      where emp.Email == loginVM.Email
                                      select r).ToList();
 
+             /*       var employee = (from emp in _context.Employees                                 
+                                    where emp.Email == loginVM.Email
+                                     select emp).ToList();*/
+
+
                     var claims = new List<Claim>();
                     claims.Add(new Claim("Email", loginVM.Email));
                     foreach (var roles in CheckRole)

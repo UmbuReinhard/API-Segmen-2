@@ -64,5 +64,14 @@ namespace API.Controllers
             return StatusCode(200,new { m= "test cors berhasil" });
         }
 
+
+        [HttpGet("Gets")]
+        public ActionResult Gets()
+        {
+
+            return Ok(_employeeRepository.Gets());
+
+        }
+
     }
 }

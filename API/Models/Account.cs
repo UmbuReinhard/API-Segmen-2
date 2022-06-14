@@ -8,6 +8,8 @@ namespace API.Models
 {
     public class Account
     {
+      
+
         [Key]
         public string NIK            { get; set; }
         [Required]
@@ -19,10 +21,10 @@ namespace API.Models
 
         public bool IsActive         { get; set; }
 
-        public Employee Employee     { get; set; }
+        public   Employee Employee     { get; set; }
 
-        public Profiling Profiling   { get; set; }
+        public virtual Profiling Profiling   { get; set; }
 
-        public ICollection<AccountRole> AccountRole { get; set; }
+        public virtual  ICollection<AccountRole> AccountRole { get; set; }
     }
 }

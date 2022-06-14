@@ -1,0 +1,166 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div class="container">
+    <h1>Overview</h1>
+    <div class="row">
+        <div class="col-md-6 ">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/dQQi4qHz-6U" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="border-radius: 5px;"></iframe>
+        </div>
+        <div class="col-md-6">
+            <div class="col-md-12">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Donec non eleifend urna, ac scelerisque nisl. Quisque semper posuere urna, ac aliquam nunc hendrerit id.
+                </p>
+            </div>
+            <div class="col-md-12">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Donec non eleifend urna, ac scelerisque nisl.
+                    Quisque semper posuere urna, ac aliquam nunc hendrerit id.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non eleifend urna, ac scelerisque nisl.
+                    Quisque semper posuere urna, ac aliquam nunc hendrerit id.
+                    Integer nec eros et orci sagittis cursus nec vitae felis. Sed eget suscipit felis, quis facilisis erat. Sed sit amet fringilla dui, et cursus odio. Nunc id ornare urna, non sodales nisi.
+                    Maecenas ut felis vitae lectus rutrum tempor.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" style="margin-top: 20px;">
+    <div class="row" style=" border-radius:5px; padding-top:20px;">
+        <div class="col-md-12">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non eleifend urna, ac scelerisque nisl.
+                Quisque semper posuere urna, ac aliquam nunc hendrerit id.
+                Integer nec eros et orci sagittis cursus nec vitae felis. Sed eget suscipit felis, quis facilisis erat. Sed sit amet fringilla dui, et cursus odio. Nunc id ornare urna, non sodales nisi. Maecenas ut felis vitae lectus rutrum tempor.
+                Praesent commodo eros nec eros auctor, sed euismod turpis scelerisque.
+                Duis pharetra tempus urna a porta. Maecenas ut nunc eros.
+            </p>
+
+            <button type="button" id="demonss" class="btn btn-primary">Check Date!</button>
+        </div>
+    </div>
+</div>
+
+<div class="jumbotron" style="margin-top: 40px; ">
+    <center>
+        <h1 class="display-4" id="testing">Change Me!</h1>
+        <hr class="my-2">
+    </center>
+</div>
+<div class="container  px-lg-5">
+    <div class="row mx-lg-n5">
+        <table  class="table table-striped table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>No</th>
+                    <th>Name</th>
+                    <th>Url</th>
+                </tr>
+            </thead>
+            <tbody id="tablepoke">
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modaldetail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Detail Pokemon</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                               
+                    <div class="col" s>
+                        <center>
+                            @* <img id="image" src="" alt="Image"  class="rounded-circle" style="width:200px; height:200px;" />*@
+                            <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel" style="width:300px; height:300px;">
+                                <ol class="carousel-indicators">
+                                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                                </ol>
+                                <div class="carousel-inner">
+                                    @*   <h1 id="PokeName"></h1>*@
+
+                                    <div class="carousel-item active">
+                                        <img id="image" src="" class="d-block w-100 " alt="..." style="margin-bottom:10px;" />
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img id="image1" src="" class="d-block w-100  " alt="..." style=" width: 290px; height: 290px; " />
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img id="image2" src="" class="d-block w-100 " alt="...">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </center>
+                    </div>
+
+
+                    <div class="col" style="margin-right: 8px;">
+                        <h1 id="PokeName"></h1>
+                        <h6>Type: <span class="tipe"></span></h6>
+                        <div class="container">
+                            <ul class="nav nav-pills">
+                                <li class="nav-item">
+                                    <h6 id="status" class="nav-link  " >Status</h6>
+                                </li>
+                                <li class="nav-item">
+                                    <h6  id="ability" class="nav-link">Ability</h6>
+                                </li>
+                            </ul>
+                            <div id="data" style="width:200px; height:200px;">
+                                <h6 style="margin-bottom:4px;">Exp</h6>
+                                <div id="baseEx" class="progress">
+                                </div>
+
+                                <h6 style="margin-bottom:4px;">Hp </h6>
+                                <div id="hp" class="progress">
+
+                                </div>
+
+                                <h6 style="margin-bottom:4px;">Attack </h6>
+                                <div id="attack" class="progress">
+
+                                </div>
+
+                                <h6 style="margin-bottom:4px;">Defense </h6>
+                                <div id="def" class="progress">
+
+                                </div>
+                                <h6 style="margin-bottom:4px;">Speed </h6>
+                                <div id="speed" class="progress" style="margin-bottom:8px;">
+                                </div>
+                            </div>
+
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

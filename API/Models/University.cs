@@ -8,6 +8,10 @@ namespace API.Models
 {
     public class University
     {
+        public University()
+        {
+            this.Education = new HashSet<Education>();
+        }
 
         [Key]
         public int Id { get; set; }
@@ -15,7 +19,7 @@ namespace API.Models
         [Required]
         public string Name { get; set; }
 
-        public ICollection<Education> Education { get; set; }
+        public virtual ICollection<Education> Education { get; set; }
 
 
 

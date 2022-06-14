@@ -18,7 +18,7 @@ namespace API.Models
         public string Email { get; set; }
         public Gender Gender { get; set; }
         public bool IsDeleted { get; set; }
-        public Account Account { get; set; }
+        public  Account Account { get; set; }
 
     }
     public enum Gender

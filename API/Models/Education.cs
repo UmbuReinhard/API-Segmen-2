@@ -8,11 +8,16 @@ namespace API.Models
 {
     public class Education
     {
+        public Education()
+        {
+            this.Profiling = new HashSet<Profiling>();
+        }
+    
         [Key]
         public int Id { get; set; }
 
         [Required]
-        public Degree Degree  { get; set; }
+        public  Degree Degree  { get; set; }
 
         [Required]
         public string GPA     { get; set; }
@@ -20,9 +25,9 @@ namespace API.Models
 
         public int UniversityId { get; set; }
 
-        public ICollection<Profiling> Profiling { get; set; }
+        public virtual  ICollection<Profiling> Profiling { get; set; }
 
-        public University University { get; set; }
+        public virtual University University { get; set; }
     }
 
     public enum Degree

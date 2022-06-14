@@ -15,8 +15,8 @@ namespace API.Models
 
         public int EducationId { get; set; }
 
-        public Education Education { get; set; }
+        public  virtual Education Education { get; set; }
 
-        public Account Account { get; set; }
+        public  virtual Account Account { get; set; }
     }
 }

@@ -64,8 +64,9 @@ namespace API
                  c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());
             });
 
-            services.AddDbContext<MyContext>(options => 
+            services.AddDbContext<MyContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("APIContext")));
+            /*options.UseLazyLoadingProxies().UseSqlServer(Configuration.GetConnectionString("APIContext")));*/
         }
 
 
@@ -81,9 +82,10 @@ namespace API
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            app.UseCors(options => options.AllowAnyOrigin());
             app.UseAuthentication();
             app.UseAuthorization();
-            app.UseCors(options => options.AllowAnyOrigin());
+         
 
             app.UseEndpoints(endpoints =>
             {

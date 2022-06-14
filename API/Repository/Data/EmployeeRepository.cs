@@ -169,6 +169,11 @@ namespace API.Repository.Data
         }
         */
 
+        public IEnumerable<Employee> Gets()
+        {
+            return _context.Employees.ToList();
+        }
+
 
         public bool CheckEmail(string email)
         {

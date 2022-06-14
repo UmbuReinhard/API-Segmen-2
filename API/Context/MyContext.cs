@@ -13,6 +13,16 @@ namespace API.Context
         {
 
         }
+
+/*        protected override void OnConfiguring(DbContextOptionsBuilder obj)
+        {
+            if (!obj.IsConfigured)
+            {
+                obj.UseLazyLoadingProxies();
+            }
+        }*/
+
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Employee>()
@@ -28,7 +38,6 @@ namespace API.Context
             modelBuilder.Entity<Profiling>()
                     .HasOne(e => e.Education)
                     .WithMany(em => em.Profiling);
-
 
             modelBuilder.Entity<Education>()
                   .HasOne(e => e.University)
