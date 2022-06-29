@@ -43,15 +43,15 @@ namespace API.Controllers
 
             if (_accountRepository.Login(loginVM, out Token) == 200)
             {
-                return StatusCode(200, new { status = HttpStatusCode.OK, Token = Token, message = "Loggin" });
+                return StatusCode(200, new { status = Convert.ToInt32(HttpStatusCode.OK), Token = Token, message = "Loggin" });
             }
             else if (_accountRepository.Login(loginVM, out Token) == 404)
             {
-                return StatusCode(404, new { status = HttpStatusCode.NotFound, Token = Token, message = "Gagal Login : Password Salah!" });
+                return StatusCode(404, new { status = Convert.ToInt32 (HttpStatusCode.NotFound), Token = Token, message = "Gagal Login : Password Salah!" });
             }
             else
             {
-                return StatusCode(400, new { status = HttpStatusCode.BadRequest,Token = Token, message = "Gagal Login : Email tidak ditemukan!" });
+                return StatusCode(400, new { status = Convert.ToInt32(HttpStatusCode.BadRequest),Token = Token, message = "Gagal Login : Email tidak ditemukan!" });
             }
         }
 

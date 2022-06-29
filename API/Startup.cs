@@ -61,7 +61,7 @@ namespace API
 
             services.AddCors(c =>
             {
-                 c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());
+                 c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
             });
 
             services.AddDbContext<MyContext>(options =>
@@ -82,7 +82,7 @@ namespace API
             app.UseHttpsRedirection();
 
             app.UseRouting();
-            app.UseCors(options => options.AllowAnyOrigin());
+            app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             app.UseAuthentication();
             app.UseAuthorization();
          

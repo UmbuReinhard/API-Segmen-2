@@ -90,6 +90,7 @@ namespace API.Repository.Data
                              Birthday = emp.Birthday,
                              Salary   = emp.Salary,
                              Email    = emp.Email,
+
                              Gender   = Enum.GetName(typeof (Gender), emp.Gender),
                              Degree   = Enum.GetName(typeof (Degree), edu.Degree), 
                              GPA      = edu.GPA,
@@ -111,20 +112,24 @@ namespace API.Repository.Data
                            where emp.NIK == pro.NIK
                            select new { 
                                 edu.GPA,
+                                edu.Id,
                                 edu.Degree,
                                 unni.Name
                            }).FirstOrDefault();
 
                 RegisterGetAll registerGetAll = new RegisterGetAll
                 {
-                    FullName = emp.FirstName + " " + emp.LastName,
+                    FirstName = emp.FirstName,
+                    LastName = emp.LastName,
                     Phone = emp.Phone,
                     Birthday = emp.Birthday,
                     Salary = emp.Salary,
                     Email = emp.Email,
+                    Nik = emp.NIK,
                     Gender = Enum.GetName(typeof(Gender), emp.Gender),
                     Degree = Enum.GetName(typeof(Degree), Data.Degree),
                     GPA = Data.GPA,
+                    EduId = Data.Id,
                     UniversityName = Data.Name
                 };
                 registerGetAlls.Add(registerGetAll);
@@ -173,6 +178,30 @@ namespace API.Repository.Data
         {
             return _context.Employees.ToList();
         }
+
+        public int DeleteAll(Assign NIK)
+        {
+            var AR = (from a in _context.AccountRoles
+                      where a.AccNIK == NIK.NIK
+                      select a).FirstOrDefault();
+    
+            _context.Remove(AR);
+
+            var Pro = _context.Profilings.Find(NIK.NIK);
+            var Edu = _context.Educations.Find(Pro.EducationId);
+            _context.Remove(Edu);
+            _context.Remove(Pro);
+
+            var ACC = _context.Accounts.Find(NIK.NIK);
+            _context.Remove(ACC);
+
+            var EMP = _context.Employees.Find(NIK.NIK);
+            _context.Remove(EMP);
+
+            return _context.SaveChanges();
+
+        }
+
 
 
         public bool CheckEmail(string email)

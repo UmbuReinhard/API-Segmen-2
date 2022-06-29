@@ -2,6 +2,7 @@
 using API.Repository.Data;
 using API.ViewModel;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -24,6 +25,7 @@ namespace API.Controllers
         }
 
         [HttpPost("Register")]
+        [EnableCors("AllowOrigin")]
         public ActionResult Post(RegisterEmployeeVM registerEmployee)
         {
             if (_employeeRepository.CheckEmail(registerEmployee.Email))
@@ -50,7 +52,7 @@ namespace API.Controllers
 
         }
 
-        [Authorize(Roles = "Directur,Manager")]
+      /*  [Authorize(Roles = "Directur,Manager")]*/
         [HttpGet("GetAll")]
         public ActionResult GetAll()
         { 
@@ -65,7 +67,36 @@ namespace API.Controllers
         }
 
 
-        [HttpGet("Gets")]
+
+
+        [HttpPost("DeleteAll")]
+        [EnableCors("AllowOrigin")]
+        public ActionResult DeleteALl(Assign NIK)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(NIK.NIK))
+                {
+                    return StatusCode(400, new { status = HttpStatusCode.BadRequest, message = "Delete Gagal" });
+                }
+                else
+                {
+                    _employeeRepository.DeleteAll(NIK);
+                    return StatusCode(200, new { status = HttpStatusCode.OK, message = "Delete Berhasil" });
+                }
+            }
+            catch (Exception)
+            {
+                return StatusCode(400, new { status = HttpStatusCode.BadRequest, message = "Delete Gagal " + "NIK Tidak Ditemukan !" });
+            }
+
+        }
+
+
+
+
+
+            [HttpGet("Gets")]
         public ActionResult Gets()
         {
 

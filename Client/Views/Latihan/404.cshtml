@@ -1,0 +1,63 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = "_LayoutError";
+}
+
+@*<div class="error-page">
+        <h2 class="headline text-warning"> 404</h2>
+
+        <div class="error-content">
+            <h3><i class="fas fa-exclamation-triangle text-warning"></i> Oops! Page not found.</h3>
+
+            <p>
+                We could not find the page you were looking for.
+                Meanwhile, you may <a href="../Login">return to Login</a>
+            </p>
+
+
+        </div>
+    </div>*@
+
+
+
+
+
+<div class="site" style="margin-top:150px;">
+    <div class="sketch">
+        <div class="bee-sketch red"></div>
+        <div class="bee-sketch blue"></div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar" id="" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <h1>
+        404:
+        <small>
+            We could not find the page you were looking for.
+            Meanwhile, you may <a href="../Login">return to Login</a>
+        </small>
+        <small id="msg">
+        </small>
+
+    </h1>
+</div>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script>
+    var url = "../Login";// membuat url tujuan
+    var count = 5; // membuat hitungan kedalam detik
+    function countDown() {
+        if (count > 0) {
+            count--;
+            var waktu = count + 1;
+            $("#msg").html('Anda akan menuju ke ' + '<i>' +' halaman Login dalam hitungan: ' + waktu + ' detik.' + '<i>');
+            setTimeout("countDown()", 1000);
+        } else {
+            window.location.href = url;
+        }
+    }
+    countDown();
+</script>
+
+
+
+

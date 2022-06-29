@@ -1,62 +1,94 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    Layout = "_LayoutAdmin";
 }
 
 
+
 <div class="container">
-    <h1>Overview</h1>
     <div class="row">
-        <div class="col-md-6 ">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/dQQi4qHz-6U" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="border-radius: 5px;"></iframe>
-        </div>
-        <div class="col-md-6">
-            <div class="col-md-12">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Donec non eleifend urna, ac scelerisque nisl. Quisque semper posuere urna, ac aliquam nunc hendrerit id.
-                </p>
+        <div class="col-md-6" style="width: 400px; height:400px">
+            <div id="CFemale"></div>
+            <div id="CMale"></div>
+            @* https://www.chartjs.org/docs/next/charts/radar.html*@
+            <div class="card" style="border-radius:5px;">
+                <center>
+                    <div class="card-body" style="width: 30rem;">
+                        <div id="myChart"></div>
+                    </div>
+                </center>
             </div>
+        </div>
+
+
+        <div class="col-md-6" style="width: 400px; height:400px">
+            <div class="card" style="border-radius:5px;">
+                <center>
+                    <div class="card-body" style="width: 30rem;">
+                        <div id="chart">
+                        </div>
+                    </div>
+                </center>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@*<div class="container">
+        <div class="row">
+            <div class="col">
+                <iframe width="460" height="310" src="https://www.youtube.com/embed/dQQi4qHz-6U" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="border-radius: 5px;"></iframe>
+            </div>
+            <div class="col">
+                <div class="col">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Donec non eleifend urna, ac scelerisque nisl. Quisque semper posuere urna, ac aliquam nunc hendrerit id.
+                    </p>
+                </div>
+                <div class="col">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Donec non eleifend urna, ac scelerisque nisl.
+                        Quisque semper posuere urna, ac aliquam nunc hendrerit id.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non eleifend urna, ac scelerisque nisl.
+                        Quisque semper posuere urna, ac aliquam nunc hendrerit id.
+                        Integer nec eros et orci sagittis cursus nec vitae felis. Sed eget suscipit felis, quis facilisis erat. Sed sit amet fringilla dui, et cursus odio. Nunc id ornare urna, non sodales nisi.
+                        Maecenas ut felis vitae lectus rutrum tempor.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+*@
+@*<div class="container" style="margin-top: 20px;">
+        <div class="row" style=" border-radius:5px; padding-top:20px;">
             <div class="col-md-12">
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Donec non eleifend urna, ac scelerisque nisl.
-                    Quisque semper posuere urna, ac aliquam nunc hendrerit id.
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non eleifend urna, ac scelerisque nisl.
                     Quisque semper posuere urna, ac aliquam nunc hendrerit id.
-                    Integer nec eros et orci sagittis cursus nec vitae felis. Sed eget suscipit felis, quis facilisis erat. Sed sit amet fringilla dui, et cursus odio. Nunc id ornare urna, non sodales nisi.
-                    Maecenas ut felis vitae lectus rutrum tempor.
+                    Integer nec eros et orci sagittis cursus nec vitae felis. Sed eget suscipit felis, quis facilisis erat. Sed sit amet fringilla dui, et cursus odio. Nunc id ornare urna, non sodales nisi. Maecenas ut felis vitae lectus rutrum tempor.
+                    Praesent commodo eros nec eros auctor, sed euismod turpis scelerisque.
+                    Duis pharetra tempus urna a porta. Maecenas ut nunc eros.
                 </p>
+
+                <button type="button" id="demonss" class="btn btn-primary">Check Date!</button>
             </div>
         </div>
     </div>
-</div>
+*@
+@*<div class="jumbotron" style="margin-top:50px;">
+        <center>
+            <h1 class="display-4" id="testing">Change Me!</h1>
+            <hr class="my-2">
+        </center>
+    </div>*@
 
-<div class="container" style="margin-top: 20px;">
-    <div class="row" style=" border-radius:5px; padding-top:20px;">
-        <div class="col-md-12">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non eleifend urna, ac scelerisque nisl.
-                Quisque semper posuere urna, ac aliquam nunc hendrerit id.
-                Integer nec eros et orci sagittis cursus nec vitae felis. Sed eget suscipit felis, quis facilisis erat. Sed sit amet fringilla dui, et cursus odio. Nunc id ornare urna, non sodales nisi. Maecenas ut felis vitae lectus rutrum tempor.
-                Praesent commodo eros nec eros auctor, sed euismod turpis scelerisque.
-                Duis pharetra tempus urna a porta. Maecenas ut nunc eros.
-            </p>
-
-            <button type="button" id="demonss" class="btn btn-primary">Check Date!</button>
-        </div>
-    </div>
-</div>
-
-<div class="jumbotron" style="margin-top: 40px; ">
-    <center>
-        <h1 class="display-4" id="testing">Change Me!</h1>
-        <hr class="my-2">
-    </center>
-</div>
-<div class="container  px-lg-5">
-    <div class="row mx-lg-n5">
-        <table  class="table table-striped table-hover">
-            <thead class="thead-dark">
+@*<div class="container" style="margin-bottom:70px;">
+        <table class="table table-striped table-hover myTable">
+            <thead>
                 <tr>
                     <th>No</th>
                     <th>Name</th>
@@ -67,10 +99,347 @@
             </tbody>
         </table>
     </div>
+*@
+
+@*<div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="info-box">
+                    <span class="info-box-icon bg-info"><i class="far fa-envelope"></i></span>
+                    <div class="info-box-content">
+                        <span class="info-box-text">Messages</span>
+                        <span class="info-box-number">1,410</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col">
+                <div class="info-box">
+                    <span class="info-box-icon bg-info"><i class="far fa-envelope"></i></span>
+                    <div class="info-box-content">
+                        <span class="info-box-text">Messages</span>
+                        <span class="info-box-number">1,410</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>*@
+
+<div class="card">
+    <div class="card-body">
+
+
+        <div class="container" style="margin-bottom:20px;">
+
+       @*     @if (User.HasClaim("name", "Nia")) { }*@
+
+            @if (User.IsInRole("Directur"))
+            {
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#empModal">
+                <i class="fa fa-plus"> </i><i class="fa fa-user"></i>
+            </button>
+            }
+        </div>
+
+        <!-- Modal Add Eployee -->
+        <div class="modal fade" id="empModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="empInsert" class="needs-validation" data-toggle="validator" novalidate>
+
+
+                            <div class="form-group row">
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="IfirstName" placeholder="First Name" name="uname" required>
+                                    <div class="valid-feedback">Valid.</div>
+                                    <div class="invalid-feedback">Please fill out this field.</div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="IlastName" placeholder="Last Name" name="uname" required>
+                                    <div class="valid-feedback">Valid.</div>
+                                    <div class="invalid-feedback">Please fill out this field.</div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="Iphone" placeholder="Phone" required>
+                                    <div class="valid-feedback">Valid.</div>
+                                    <div class="invalid-feedback">Please fill out this field.</div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="email" class="form-control" id="Iemail" placeholder="Email" required>
+                                    <div class="valid-feedback">Valid.</div>
+                                    <div class="invalid-feedback">Please fill out this field.</div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-sm-6">
+                                    <input type="date" class="form-control" id="Ibirthday" placeholder="Birthday" required>
+                                    <div class="valid-feedback">Valid.</div>
+                                    <div class="invalid-feedback">Please fill out this field.</div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="row">
+                                        <label for="inputPassword" class="col-sm-2 col-form-label">Gender: </label>
+                                        <div class="col" style="padding-top:8px;">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="Igender" value="Male" required>
+                                                <label class="form-check-label" for="inlineRadio1">Male</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="Igender" value="Female" required>
+                                                <label class="form-check-label" for="inlineRadio2">Female</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <div class="form-group row">
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="Isalary" placeholder="Salary" required>
+                                    <div class="valid-feedback">Valid.</div>
+                                    <div class="invalid-feedback">Please fill out this field.</div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="Igpa" placeholder="GPA" required>
+                                    <div class="valid-feedback">Valid.</div>
+                                    <div class="invalid-feedback">Please fill out this field.</div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-sm-6">
+                                    <select class="custom-select custom-select-sm" id="Idegree" required>
+                                        <option value="">Select Degree</option>
+                                        <option value="S1">S1</option>
+                                        <option value="S2">S2</option>
+                                        <option value="S3">S3</option>
+                                        <option value="D3">D3</option>
+                                        <option value="D4">D3</option>
+                                    </select>
+                                    <div class="valid-feedback">Valid.</div>
+                                    <div class="invalid-feedback">Please fill out this field.</div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <select class="custom-select custom-select-sm kampus" id="Suni" required>
+                                    </select>
+                                    <div class="valid-feedback">Valid.</div>
+                                    <div class="invalid-feedback">Please fill out this field.</div>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary my-1">Submit</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        @*Table EMployee*@
+        <div class="container" style="margin-bottom:50px;">
+            <table class="table table-striped table-hover ajaxTable">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody @*id="employees"*@>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Modal detail Eployee -->
+        <div class="modal fade  modalEdit " id="modaldetail2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Detail</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="card">
+                            <h5 class="card-header">Employee</h5>
+                            <div class="card-body">
+                                <form id="UPDEMP">
+
+                                    <div class="form-group row">
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control" id="Efirstname" placeholder="First Name">
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control" id="Elastname" placeholder="Last Name">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <div class="col-sm-4">
+                                            <input type="text" class="form-control" id="Enik" placeholder="NIK" disabled>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <input type="text" class="form-control" id="Ephone" placeholder="Phone">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <input type="text" class="form-control" id="Eemail" placeholder="Email">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-sm-4">
+                                            <input type="text" class="form-control" id="Esalary">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <select class="custom-select" id="Egender">
+                                                <option value="Male">Male</option>
+                                                <option value="Female">Female</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <input type="date" class="form-control" id="Ebirthday">
+                                        </div>
+                                    </div>
+                                  
+                                        <button type="submit" class="btn btn-primary my-1">Submit</button>
+                                  
+                                    </form>
+                            </div>
+                        </div>
+
+
+                        <div class="card">
+                            <h5 class="card-header">Education</h5>
+                            <div class="card-body">
+                                <form id="UPDEDU">
+
+                                    <div class="form-group row">
+                                        <div class="col-sm-4">
+
+                                            <select class="custom-select" id="Edegree">
+                                                <option value="0">D3</option>
+                                                <option value="1">D4</option>
+                                                <option value="2">S1</option>
+                                                <option value="3">S2</option>
+                                                <option value="4">S3</option>
+                                            </select>
+                                            <input type="text" class="form-control" id="Eid" hidden>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <select class="custom-select UniSLCT" id="Euni">
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <input type="text" class="form-control" id="Egpa" placeholder="GPA">
+                                        </div>
+                                    </div>
+                                   
+                                        <button type="submit" class="btn btn-primary my-1">Submit</button>
+                              
+                                    </form>
+                            </div>
+                        </div>
+
+
+                        @* <form>
+                                <div class="form-group row">
+                                    <label for="inputPassword" class="col-sm-2 col-form-label">Name</label>
+                                    <div class="col-sm-10">
+
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputPassword" class="col-sm-2 col-form-label">NIK</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="nik" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" id="email" class="form-control" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputPassword" class="col-sm-2 col-form-label">Phone</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="phone" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputPassword" class="col-sm-2 col-form-label">Gender</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="gender" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputPassword" class="col-sm-2 col-form-label">Birthday</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="birthday" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputPassword" class="col-sm-2 col-form-label">Degree</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="degree" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputPassword" class="col-sm-2 col-form-label">University</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="uni" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputPassword" class="col-sm-2 col-form-label">GPA</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="gpa" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputPassword" class="col-sm-2 col-form-label">Salary</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="salary" placeholder="">
+                                    </div>
+                                </div>
+
+
+                            </form>*@
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
 </div>
 
-<!-- Modal -->
-<div class="modal fade" id="modaldetail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- Modal  Pokemon-->
+<!--<div class="modal fade" id="modaldetail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -81,20 +450,20 @@
             </div>
             <div class="modal-body">
                 <div class="row">
-                               
-                    <div class="col" s>
-                        <center>
-                            @* <img id="image" src="" alt="Image"  class="rounded-circle" style="width:200px; height:200px;" />*@
-                            <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel" style="width:300px; height:300px;">
-                                <ol class="carousel-indicators">
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                                </ol>
-                                <div class="carousel-inner">
-                                    @*   <h1 id="PokeName"></h1>*@
 
-                                    <div class="carousel-item active">
+                    <div class="col">
+                        <center>-->
+@* <img id="image" src="" alt="Image"  class="rounded-circle" style="width:200px; height:200px;" />*@
+<!--<div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel" style="width:200px; height:200px;">
+    <ol class="carousel-indicators" style="color:black;">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">-->
+@*   <h1 id="PokeName"></h1>*@
+
+<!--<div class="carousel-item active">
                                         <img id="image" src="" class="d-block w-100 " alt="..." style="margin-bottom:10px;" />
                                     </div>
                                     <div class="carousel-item">
@@ -113,54 +482,89 @@
                     <div class="col" style="margin-right: 8px;">
                         <h1 id="PokeName"></h1>
                         <h6>Type: <span class="tipe"></span></h6>
-                        <div class="container">
-                            <ul class="nav nav-pills">
-                                <li class="nav-item">
-                                    <h6 id="status" class="nav-link  " >Status</h6>
-                                </li>
-                                <li class="nav-item">
-                                    <h6  id="ability" class="nav-link">Ability</h6>
-                                </li>
-                            </ul>
-                            <div id="data" style="width:200px; height:200px;">
-                                <h6 style="margin-bottom:4px;">Exp</h6>
-                                <div id="baseEx" class="progress">
-                                </div>
 
-                                <h6 style="margin-bottom:4px;">Hp </h6>
-                                <div id="hp" class="progress">
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item">
+                                <a id="status" href="#" class="nav-link active">Status</a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="ability" href="#" class="nav-link ">Ability</a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="comparison" href="#" class="nav-link ">Comparison</a>
+                            </li>
 
-                                </div>
+                        </ul>
+                        <div id="data" style="width:200px; height:200px;">
 
-                                <h6 style="margin-bottom:4px;">Attack </h6>
-                                <div id="attack" class="progress">
-
-                                </div>
-
-                                <h6 style="margin-bottom:4px;">Defense </h6>
-                                <div id="def" class="progress">
-
-                                </div>
-                                <h6 style="margin-bottom:4px;">Speed </h6>
-                                <div id="speed" class="progress" style="margin-bottom:8px;">
-                                </div>
+                            <h6 style="margin-bottom:4px;">Exp</h6>
+                            <div id="baseEx" class="progress">
                             </div>
 
+                            <h6 style="margin-bottom:4px;">Hp </h6>
+                            <div id="hp" class="progress">
 
-                            
+                            </div>
+
+                            <h6 style="margin-bottom:4px;">Attack </h6>
+                            <div id="attack" class="progress">
+
+                            </div>
+
+                            <h6 style="margin-bottom:4px;">Defense </h6>
+                            <div id="def" class="progress">
+
+                            </div>
+                            <h6 style="margin-bottom:4px;">Speed</h6>
+                            <div id="speed" class="progress" style="margin-bottom:8px;">
+                            </div>
                         </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card-body isiChart" style="width: 30rem;">
+                            <canvas id="radarChart"></canvas>
+                        </div>
+
                     </div>
                 </div>
             </div>
 
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
             </div>
         </div>
     </div>
-</div>
+</div>-->
 
 
 
+
+
+
+
+
+
+
+<script>
+
+    // Disable form submissions if there are invalid fields
+    (function () {
+        'use strict';
+        window.addEventListener('load', function () {
+            // Get the forms we want to add validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
+</script>
 
